@@ -4,9 +4,6 @@ const UserSchema=new mongoose.Schema({
     email:{type:String,required:true,unique:true},
     firstName:{type:String},
     lastName:{type:String},
-    verification:{type:Boolean,default:false},
-    phone:{type:String,default:"01234"},
-    userType:{type:String,required:true,default:'User',enum:['User','Admin','HiringCompany']},
     profileImage:{type:String,},
     password:{type:String,required:true}
 },{

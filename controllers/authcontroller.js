@@ -21,11 +21,11 @@ module.exports={
                 return res.status(400).json({status:false,message:"Email already exists"})
             }
             const encryptedPassword=await bcrypt.hash(req.body.password,10)
-            const newUser=User({username:req.body.username,
+            const newUser=User({
+                username:req.body.username,
                 firstname:req.body.firstname,
                 lastname:req.body.lastname,
                 email:req.body.email,
-                userType:"User", 
                 password:encryptedPassword
             })
             await newUser.save()
